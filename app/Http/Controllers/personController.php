@@ -45,7 +45,7 @@ class personController extends Controller
             'last_name'     =>  $request->get('last_name')
         ]);
         $person->save();
-        return redirect()->route('person.create')->with('success', 'Data Added');
+        return redirect()->route('person.index')->with('success', 'Data Added');
     }
 
     /**
