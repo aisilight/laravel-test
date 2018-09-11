@@ -14,7 +14,8 @@ class personController extends Controller
      */
     public function index()
     {
-        //
+        $people = person::all()->toArray();
+        return view('index', compact('people'));
     }
 
     /**
