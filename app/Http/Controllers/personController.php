@@ -14,7 +14,7 @@ class personController extends Controller
      */
     public function index()
     {
-        $people = person::all()->toArray();
+        $people = person::all()->toArray();  //извлекаем все данные из таблицы в формат массива и сохраняем в переменную
         return view('index', compact('people'));
     }
 
