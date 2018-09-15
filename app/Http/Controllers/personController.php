@@ -91,6 +91,8 @@ class personController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $person = Person::find($id);
+        $person->delete();
+        return redirect()->route('index')->with('success', 'Data Deleted');
     }
 }
