@@ -29,7 +29,13 @@
                         <td>{{$row['first_name']}}</td>
                         <td>{{$row['last_name']}}</td>
                         <td><a href="{{action('personController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
-                        <td></td>
+                        <td>
+                        <form method="post" class="delete_form" action="{{action('PersonController@destroy', $row['id'])}}">
+                           {{csrf_field()}}
+                         <input type="hidden" name="_method" value="DELETE" />
+                         <button type="submit" class="btn btn-danger">Delete</button>
+     </form>
+                        </td>
                     </tr>
                 @endforeach
             </table>
