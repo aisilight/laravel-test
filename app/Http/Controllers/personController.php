@@ -80,7 +80,15 @@ class personController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'first_name'    =>  'required',
+            'last_name'     =>  'required'
+        ]);
+        $person = Person::find($id);
+        $person->first_name = $request->get('first_name');
+        $person->last_name = $request->get('last_name');
+        $person->save();
+        return redirect()->route('person.index')->with('success', 'Data Updated');
     }
 
     /**
