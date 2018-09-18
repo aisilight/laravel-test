@@ -67,7 +67,7 @@ class personController extends Controller
      */
     public function edit($id)
     {
-        $person = Person::find($id);
+        $person = Person::find($id);   //функция поиска данных человека в базе данных 
         return view('person.edit', compact('person', 'id'));
     }
 
